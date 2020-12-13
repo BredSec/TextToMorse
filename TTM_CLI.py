@@ -13,8 +13,11 @@ while running:
 		textstring = input("What would you like to translate into morse? : ")
 
 		for char in textstring:
-			morsestring += data["ttm"][char]
-			morsestring += " "
+			try:
+				morsestring += data["ttm"][char]
+				morsestring += " "
+			except:
+				print("Error: Invalid Character")
 
 		print(morsestring)
 	elif ttm_mmt.lower() == "mtt":
@@ -36,12 +39,12 @@ while running:
 						textstring += data["mtt"][templetter]
 						templetter = ""
 				except:
-					print("no")
+					print("Error: Invalid Character")
 			else:
 				try:
 					textstring += data["mtt"][templetter]
 					templetter = ""
 				except:
-					print("invalid")
+					print("Error: Invalid Character")
 
 		print(textstring)
