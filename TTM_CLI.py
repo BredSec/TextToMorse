@@ -20,6 +20,9 @@ while running:
 	elif ttm_mmt.lower() == "mtt":
 		morsestring = input("What would you like to translate into text? : ")
 
+		while morsestring[-1] == " ":
+			morsestring = morsestring[:-1]
+
 		templetter = ""
 		textstring = ""
 		length = 0
